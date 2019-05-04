@@ -36,8 +36,10 @@ if __name__ == "__main__":
     y = np.array([[0],[1],[1],[0]])
     nn = NeuralNetwork(X,y)
 
-    for i in range(1500):
+    for i in range(3000):
         nn.feedforward()
         nn.backprop()
+        if (i % 500) == 0 :
+        	print(nn.output) 
 
     print(nn.output)
