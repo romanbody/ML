@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def sigmoid(x):
     return 1.0/(1+ np.exp(-x))
@@ -29,17 +30,31 @@ class NeuralNetwork:
 
 
 if __name__ == "__main__":
+    steps = []
     X = np.array([[0,0,1],
                   [0,1,1],
                   [1,0,1],
                   [1,1,1]])
     y = np.array([[0],[1],[1],[0]])
     nn = NeuralNetwork(X,y)
-
-    for i in range(3000):
+    
+    for i in range(400):
         nn.feedforward()
         nn.backprop()
-        if (i % 500) == 0 :
-        	print(nn.output) 
+        if (i % 10) == 0:
+            #print(nn.output) 
+            steps.append(nn.output)
 
-    print(nn.output)
+    #print(nn.output)
+
+    fig = plt.figure()
+
+    ax = fig.add_subplot(2, 1, 1,title='Sample ANN')
+
+    #ax.plot(steps)
+    mat = np.array(steps)
+    ax.plot(mat[:,0],'b--')
+    ax.plot(mat[:,1],'g')
+    ax.plot(mat[:,2],'r--')
+    ax.plot(mat[:,3],'y')
+    plt.show()
