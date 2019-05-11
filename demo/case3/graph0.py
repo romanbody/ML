@@ -2,7 +2,7 @@
 """
 Created on Tue May  7 12:55:03 2019
 
-@author: a621587
+@author: RBo
 """
 
 def sigmoid(x, derivative=False):
@@ -18,7 +18,7 @@ def ReLU(x, derivative=False):
 
 import matplotlib.pyplot as plt
 import numpy as np
-
+from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=plt.figaspect(2.))
 fig.suptitle('A tale of 2 subplots')
