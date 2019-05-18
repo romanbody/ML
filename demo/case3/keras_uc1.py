@@ -19,7 +19,7 @@ print('keras: %s' % keras.__version__)
 numpy.random.seed(7)
 
 # load pima indians dataset
-dataset = numpy.loadtxt("d:\\git\\ML\\pima-indians-diabetes.data.csv", delimiter=",")
+dataset = numpy.loadtxt("pima-indians-diabetes.data.csv", delimiter=",")
 # split into input (X) and output (Y) variables
 X = dataset[:,0:8]
 Y = dataset[:,8]
