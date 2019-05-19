@@ -16,7 +16,7 @@ fot more details:
  https://cloud.google.com/docs/authentication/production#auth-cloud-implicit-python
  https://cloud.google.com/storage/docs/reference/libraries
 """
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/Users/romanbody/git/ML/RboProject-3d694a700687.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/Users/romanbody/git/config/google/RboProject-45348ace0c53.json"
 
 credentials = GoogleCredentials.get_application_default()
 service = discovery.build('storage', 'v1', credentials=credentials)
@@ -24,6 +24,6 @@ service = discovery.build('storage', 'v1', credentials=credentials)
 filename = '/Users/romanbody/git/ML/demo/sample.csv'
 bucket = 'clear-adapter-232311'
 
-body = {'name': 'dest_file_name.csv'}
+body = {'name': 'dest_file_name5.csv'}
 req = service.objects().insert(bucket=bucket, body=body, media_body=filename)
 resp = req.execute()
