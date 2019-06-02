@@ -1,23 +1,31 @@
-#!/usr/bin/env python3.4
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Thu May 16 09:10:08 2019
+Created on Sat Jun  1 16:31:54 2019
 
 @author: romanbody
 """
-import os
-from googleapiclient import discovery
-from oauth2client.client import GoogleCredentials
+
+import numpy as np
+from matplotlib import pyplot as plt
+from matplotlib.animation import FuncAnimation
+plt.style.use('seaborn-pastel')
 
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/Users/romanbody/git/ML/RboProject-3d694a700687.json"
+fig = plt.figure()
+ax = plt.axes(xlim=(0, 4), ylim=(-2, 2))
+line, = ax.plot([], [], lw=3)
 
-credentials = GoogleCredentials.get_application_default()
-service = discovery.build('storage', 'v1', credentials=credentials)
+def init():
+    line.set_data([], [])
+    return line,
+def animate(i):
+    x = np.linspace(0, 4, 1000)
+    y = np.sin(2 * np.pi * (x - 0.01 * i))
+    line.set_data(x, y)
+    return line,
 
-filename = '/Users/romanbody/git/ML/demo/sample.csv'
-bucket = 'clear-adapter-232311'
+anim = FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=True)
 
-body = {'name': 'dest_file_name.csv'}
-req = service.objects().insert(bucket=bucket, body=body, media_body=filename)
-resp = req.execute()
+
+anim.save('sine_wave.gif', writer='imagemagick')
