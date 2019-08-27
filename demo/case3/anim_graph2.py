@@ -27,7 +27,7 @@ plt.ylim(0, 1)
 plt.xlabel('x')
 plt.title('test')
 line_ani = animation.FuncAnimation(fig1, update_line, 25, fargs=(data, l),
-                                   interval=50)
+                                   interval=50, blit=True)
 line_ani.save('lines.mp4', writer=writer)
 
 fig2 = plt.figure()
