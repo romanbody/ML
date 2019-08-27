@@ -9,5 +9,5 @@ class rbo():
         for x in range(1,o1,3):
             print (self.first_name + str(x))
 
-rbo1 = rbo('roman')
+rbo1 = rbo('test1')
 rbo1.print_out(10)
