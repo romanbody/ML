@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def thang(x):
+    return x*x 
 
 def sigmoid(x):
     return 1.0/(1+ np.exp(-x))
