@@ -1,5 +1,6 @@
-class rbo():
-    first_name = ""
+for x in 1..10:
+    print (x)   
+print (1)
 
     def __init__(self,init_name):
         print ('init1')
