@@ -10,6 +10,12 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     return x * (1.0 - x)
 
+class test:
+
+    def aa(self):
+        self.output = 1
+
+
 class NeuralNetwork:
     def __init__(self, x, y):
         self.input      = x
