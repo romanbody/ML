@@ -5,7 +5,6 @@ Created on Tue May  7 13:37:19 2019
 @author: a621587
 """
 # This import registers the 3D projection, but is otherwise unused.
-from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
 
 import matplotlib.pyplot as plt
 import numpy as np
